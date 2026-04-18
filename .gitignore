@@ -1,0 +1,48 @@
+# --- Virtual environments ---
+venv/
+burn_project/venv/
+.venv/
+ENV/
+env/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Django ---
+*.log
+local_settings.py
+burn_project/db.sqlite3
+burn_project/staticfiles/
+
+# User uploads (do not commit PHI / test images)
+burn_project/media/
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+
+# --- ML artifacts (supply on Render: secret file, disk, or download) ---
+burn_project/predictor/burn_model_final.keras
+burn_project/predictor/labels.pkl
+
+# --- OS / editors ---
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo

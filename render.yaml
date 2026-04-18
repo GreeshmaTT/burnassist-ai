@@ -5,14 +5,10 @@
 services:
   - type: web
     name: burnassist-ai
-    runtime: python
+    runtime: docker
     region: oregon
-    rootDir: burn_project
-    buildCommand: pip install -r requirements.txt && python manage.py migrate --noinput && python manage.py collectstatic --noinput
-    startCommand: gunicorn burn_project.wsgi:application --bind 0.0.0.0:$PORT --workers 1 --timeout 120
+    dockerfilePath: Dockerfile
     envVars:
-      - key: PYTHON_VERSION
-        value: "3.10"
       - key: DJANGO_DEBUG
         value: "false"
       - key: DJANGO_SECRET_KEY
